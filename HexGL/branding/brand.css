@@ -1,0 +1,79 @@
+/* Habillage de l'accueil ACME : uniquement des var(--acme-*) définies par branding.js,
+   sélecteurs préfixés #step-1 (aucun autre écran n'est touché). */
+
+#step-1 #global {
+  background: var(--acme-bg);
+  animation: none;
+}
+
+#step-1 #title {
+  display: none;
+}
+
+#step-1 #brand {
+  position: absolute;
+  top: 4vh;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  padding: 0 16px;
+  text-align: center;
+  color: var(--acme-text);
+}
+
+/* Le logo est fourni sur fond blanc : on le garde sur une carte blanche, ratio intact. */
+#step-1 #brand-logo {
+  display: inline-block;
+  padding: 2vh 3vh;
+  background: var(--acme-text);
+  border-radius: 16px;
+}
+
+#step-1 #brand-logo img {
+  display: block;
+  width: min(380px, 60vw, 48vh);
+  height: auto;
+}
+
+#step-1 #brand-welcome {
+  margin: 2.5vh 0 0.5vh;
+  font-size: clamp(1.6rem, 5.5vh, 3rem);
+  font-weight: normal;
+  letter-spacing: 0.03em;
+}
+
+#step-1 #brand-tagline {
+  margin: 0;
+  font-size: clamp(1rem, 2.6vh, 1.4rem);
+  color: var(--acme-surface);
+}
+
+/* Menu : texte clair sur fond sombre, plus de barre blanche ni de halo. */
+#step-1 #menu {
+  color: var(--acme-text);
+}
+
+#step-1 #menu div {
+  background: none;
+  text-shadow: none;
+}
+
+#step-1 #menu div:hover {
+  color: var(--acme-cyan);
+}
+
+/* Bouton de démarrage : pastille violette, bleu électrique au survol. */
+#step-1 #menu #start {
+  width: fit-content;
+  margin: 0 auto 1.2vh;
+  padding: 0.15em 1.2em 0.05em;
+  border-radius: 999px;
+  background: var(--acme-violet);
+  color: var(--acme-text);
+}
+
+#step-1 #menu #start:hover {
+  background: var(--acme-blue);
+  /* multi.css impose #start:hover { color: ... !important } */
+  color: var(--acme-text) !important;
+}
