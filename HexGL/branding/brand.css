@@ -2,7 +2,18 @@
    sélecteurs préfixés #step-1 (aucun autre écran n'est touché). */
 
 #step-1 #global {
-  background: var(--acme-bg);
+  /* Moiré : deux trames de lignes fines légèrement désaxées (violet / cyan) sur un
+     dégradé bleu-violet, le tout assombri vers le fond de marque. */
+  background:
+    repeating-linear-gradient(45deg,
+      color-mix(in srgb, var(--acme-violet) 45%, transparent) 0 2px,
+      transparent 2px 7px),
+    repeating-linear-gradient(48deg,
+      color-mix(in srgb, var(--acme-cyan) 35%, transparent) 0 2px,
+      transparent 2px 7px),
+    radial-gradient(ellipse at 20% 15%, var(--acme-violet) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 85%, var(--acme-blue) 0%, transparent 60%),
+    var(--acme-bg);
   animation: none;
 }
 
